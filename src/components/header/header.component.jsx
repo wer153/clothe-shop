@@ -8,7 +8,7 @@ import { ReactComponent as Logo } from '../../assets/crown.svg'
 
 import './header.styles.scss'
 import CartIcon from '../cart-icon/cart-icon.component'
-import CartDropdown from '../cart-dropdown.component/cart-dropdown.component'
+import CartDropdown from '../cart-dropdown/cart-dropdown.component'
 
 
 const Header = ( {currentUser, hidden} ) => (
@@ -43,7 +43,7 @@ const Header = ( {currentUser, hidden} ) => (
     </div>
 )
 
-const mapStateToProps = ({user: { currentUser}, cart: { cartItems, hidden }}) => ({
+const mapStateToProps = ({user: { currentUser}, cart: { hidden }}) => ({
     currentUser, hidden
 })
 

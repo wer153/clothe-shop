@@ -21,7 +21,6 @@ class Directory extends React.Component {
                 this.state.sections.map(({ id, ...params }) => (
                     <MenuItem key={id} {...params} />
                 ))
-                
             }
             </div>
         )
