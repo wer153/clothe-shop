@@ -17,12 +17,12 @@ class Directory extends React.Component {
     render() {
         return (
             <div className='directory-menu'>
-                {
-                    this.state.sections.map(({ id, ...params }) => (
-                        <MenuItem key={id} {...params} />
-                    ))
-                    
-                }
+            {
+                this.state.sections.map(({ id, ...params }) => (
+                    <MenuItem key={id} {...params} />
+                ))
+                
+            }
             </div>
         )
     }
