@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.selectCartItemsCount = exports.selectCartItems = void 0;
+exports.selectCartHidden = exports.selectCartTotalPrice = exports.selectCartItemsCount = exports.selectCartItems = void 0;
 
 var _reselect = require("reselect");
 
@@ -21,3 +21,13 @@ var selectCartItemsCount = (0, _reselect.createSelector)([selectCartItems], func
   }, 0);
 });
 exports.selectCartItemsCount = selectCartItemsCount;
+var selectCartTotalPrice = (0, _reselect.createSelector)([selectCartItems], function (cartItems) {
+  return cartItems.reduce(function (accumulatedQuantity, cartItem) {
+    return accumulatedQuantity + cartItem.quantity * cartItem.price;
+  }, 0);
+});
+exports.selectCartTotalPrice = selectCartTotalPrice;
+var selectCartHidden = (0, _reselect.createSelector)([selectCart], function (cart) {
+  return cart.hidden;
+});
+exports.selectCartHidden = selectCartHidden;
